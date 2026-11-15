@@ -1,0 +1,289 @@
+/* Saved by the Bell website. Colours match the extension. */
+:root {
+  --green: #2f6f4f;
+  --green-dark: #24573e;
+  --amber: #f0b429;
+  --text: #1f2933;
+  --muted: #52606d;
+  --bg: #ffffff;
+  --soft: #f3f7f5;
+  --card: #ffffff;
+  --border: #d9e2ec;
+  --on-green: #ffffff;
+  --link: #2f6f4f;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #e4e7eb;
+    --muted: #9aa5b1;
+    --bg: #14201a;
+    --soft: #1b2a22;
+    --card: #1f3028;
+    --border: #2f4338;
+    --link: #7fd1a6;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--bg);
+}
+
+a {
+  color: var(--link);
+}
+
+.wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ── Header ── */
+.site-header {
+  padding: 16px 0;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.brand img {
+  width: 32px;
+  height: 32px;
+}
+
+/* ── Hero ── */
+.hero {
+  background: var(--green);
+  color: var(--on-green);
+  padding: 56px 0;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero img {
+  width: 128px;
+  height: 128px;
+  flex-shrink: 0;
+  border-radius: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+
+.hero p {
+  font-size: 1.15rem;
+  margin: 0 0 20px;
+  max-width: 34em;
+}
+
+.store-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.store-button {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  background: var(--on-green);
+  color: var(--green-dark);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.store-button.soon {
+  background: transparent;
+  color: var(--on-green);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  cursor: default;
+}
+
+.hero .note {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin: 10px 0 0;
+}
+
+/* ── Sections ── */
+section {
+  padding: 48px 0;
+}
+
+section.soft {
+  background: var(--soft);
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin: 0 0 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.card h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+}
+
+.card p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.steps {
+  counter-reset: step;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.steps li {
+  counter-increment: step;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.steps li::before {
+  content: counter(step);
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--green);
+  color: var(--on-green);
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+/* ── Pricing ── */
+.price {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 4px 0 8px;
+}
+
+.price small {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.ticks {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+
+.ticks li::before {
+  content: '✓ ';
+  color: var(--green);
+  font-weight: 700;
+}
+
+@media (prefers-color-scheme: dark) {
+  .ticks li::before {
+    color: var(--link);
+  }
+}
+
+.card.highlight {
+  border: 2px solid var(--amber);
+}
+
+.small {
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+/* ── Policy text ── */
+.policy h2 {
+  font-size: 1.3rem;
+  margin-top: 28px;
+}
+
+.policy {
+  max-width: 46em;
+}
+
+/* ── Footer ── */
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0 40px;
+  font-size: 0.92rem;
+  color: var(--muted);
+}
+
+.site-footer a {
+  color: var(--muted);
+}
+
+.site-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+/* ── Phones ── */
+@media (max-width: 640px) {
+  .hero {
+    padding: 40px 0;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .hero img {
+    width: 88px;
+    height: 88px;
+    border-radius: 20px;
+  }
+
+  section {
+    padding: 36px 0;
+  }
+}
